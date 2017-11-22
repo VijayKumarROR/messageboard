@@ -1,0 +1,31 @@
+<div class="col-md-8 col-md-offset-2">
+	<div class="message-show">
+		<h2><%= @message.title %></h2>
+		<p class="message-posted-by">Posted By <b><%= @message.user.email %></b> <%= time_ago_in_words(@message.created_at)%> ago</p>
+		<p class="message-desc"><%= @message.description %></p>
+
+
+		<h2>Comments:</h2>
+		<%= render @message.comments %>
+		<h2 class="reply-to-msg">Reply to Message</h2>
+		<%= render "comments/form" %>
+
+		<div class="links btn-group">
+				<%= link_to "Back", root_path, class: "btn btn-default" %> &nbsp; &nbsp; &nbsp;
+					<% if user_signed_in?%>
+						<% if @message.user_id == current_user.id %>
+							<%= link_to "Delete", message_path(@message), method: :delete, data: {confirm: "Are You Sure" }, class: "btn btn-default"%>
+							<%= link_to "Edit Message", edit_message_path(@message), class: "btn btn-default"%> &nbsp; &nbsp; &nbsp;
+						<% end %>
+					<% end %>
+		</div>
+	</div>
+</div>
+
+
+<style type="text/css">
+	body
+	{
+		background-color: #f44b42;
+	}
+</style>

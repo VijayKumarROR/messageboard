@@ -1,0 +1,17 @@
+<% @messages.each do |message| %>
+	<div class="col-md-4">
+		<div class="message">
+					<h1 class="message-title"><%= message.title %></h1>
+					<%= link_to "View Message", message_path(message), :class => "btn-custom"%>
+		</div>
+	</div>
+<% end %> 
+
+<%#= link_to "New Message", new_message_path%>
+
+<style type="text/css">
+	body
+	{
+		background-color: #f44b42;
+	}
+</style>

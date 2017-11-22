@@ -1,0 +1,7 @@
+<%= simple_form_for @message do |m|%>
+
+	<%= m.input :title, label: "Message Title", :required => true %>
+	<%= m.input :description, :required => true %>
+	<%= m.button :submit %>
+	
+<% end %>
