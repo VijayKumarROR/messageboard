@@ -1,7 +1,15 @@
-<%= simple_form_for @message do |m|%>
+<%= simple_form_for @message, :html => {:multipart => true} do |m|%>
 
 	<%= m.input :title, label: "Message Title", :required => true %>
 	<%= m.input :description, :required => true %>
-	<%= m.file_field :attachment, :multiple => true %>
+	<%= m.file_field :attachment%>
 	<%= m.button :submit %>
 <% end %>
+
+
+<style type="text/css">
+	body
+	{
+		background-color: #f44b42;
+	}
+</style>
