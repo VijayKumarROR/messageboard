@@ -2,6 +2,7 @@
 
 	<%= m.input :title, label: "Message Title", :required => true %>
 	<%= m.input :description, :required => true %>
+	<%= m.file_field :attachment %>
 	<%= m.button :submit %>
 	
 <% end %>
